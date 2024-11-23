@@ -15,6 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Show token
+        run: echo $VERCEL_TOKEN
+
       # Runs yarn command
       - name: Run yarn
         run: yarn install
