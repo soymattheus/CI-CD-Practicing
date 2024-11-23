@@ -1,4 +1,4 @@
-name: "CI (Integração Contínua): Main workflow"
+name: "CI: Main workflow"
 
 # Controls when the workflow will run
 on:
