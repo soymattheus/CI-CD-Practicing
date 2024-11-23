@@ -11,12 +11,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    environment: ci-cd  # Environment name
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Check VERCEL_TOKEN
-        run: echo $VERCEL_TOKEN
+        run: echo token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
