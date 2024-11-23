@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf build && next build && output: export && mv ./out ./build",
+    "build": "rm -rf build && next build && mv ./out ./build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "deploy": "yarn build && npx vercel ./build --confirm --no-clipboard",
+    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
   },
   "dependencies": {
     "next": "15.0.3",
