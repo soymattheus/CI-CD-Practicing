@@ -15,8 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Show token
-        run: echo ${{ secrets.VERCEL_TOKEN }}
+      - name: Check VERCEL_TOKEN
+        run: echo $VERCEL_TOKEN
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       # Runs yarn command
       - name: Run yarn
